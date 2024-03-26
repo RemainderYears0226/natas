@@ -64,6 +64,18 @@
             margin: 0;
             font-family: 'Segoe Script', cursive;
         }
+
+        /* 图片居中样式 */
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 让外部容器占据整个视口高度 */
+        }
+        .center img {
+            max-width: 100%; /* 限制图像最大宽度为其容器宽度 */
+            height: auto; /* 让高度自动调整，保持纵横比 */
+        }
     </style>
 </head>
 <body>
@@ -71,7 +83,7 @@
     <div class="header">
         <h1>FHSH CYBER SECURITY</h1>
     </div>
-   <div class="center">
+    <div class="center"> <!-- 将图片放入容器中 -->
        <img src="img.jpg" alt="https://github.com/RemainderYears0226/natas/blob/main/wall/img.jpg">
     </div>
     <div class="button-container"> <!-- 将按钮放入容器中 -->
