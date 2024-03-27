@@ -35,8 +35,8 @@
             width: 600px;
             height: 118.4px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            padding-left: 50px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             font-family: 'Courier New', Courier, monospace;
         }
@@ -61,6 +61,10 @@
             z-index: 1;
             transition: top 2s;
         }
+        #submitButton {
+            padding: 5px 10px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -71,12 +75,17 @@
     <div class="message-box">
         <p>你可以在這裡找到下一關的密碼，但是我們封鎖了右鍵</p>
         <input type="text" id="passwordInput" placeholder="請輸入密碼">
+        <button id="submitButton">確定</button>
         <div id="successMessage">恭喜！你已經成功過關了！</div>
     </div>
     <script>
-        document.getElementById('passwordInput').onkeypress = function(e) {
-            if(e.key === 'Enter' && this.value === '12') {
-                document.getElementById('successMessage').style.top = '0';
+        document.getElementById('submitButton').onclick = function() {
+            var passwordValue = document.getElementById('passwordInput').value;
+            if(passwordValue === '12345678') {
+                document.getElementById('successMessage').style.display = 'block';
+                setTimeout(function() {
+                    document.getElementById('successMessage').style.top = '0';
+                }, 100);
             }
         };
     </script>
