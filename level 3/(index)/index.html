@@ -32,6 +32,7 @@
             padding: 20px;
             margin: 20px auto;
             width: 1000px;
+            /* 調整高度以適應內容 */
             height: auto;
             display: flex;
             flex-direction: column;
@@ -42,9 +43,10 @@
             position: relative;
         }
         .message-box img {
-            width: 60%;
-            height: auto;
-            margin-bottom: 10px;
+            /* 調整寬度，稍小於訊息框 */
+            width: 95%;
+            height: auto; /* 保持長寬比 */
+            margin-bottom: 10px; /* 圖片和按鈕之間的間距 */
         }
         .download-button {
             background-color: #007bff;
@@ -56,7 +58,7 @@
             margin-top: 10px;
             /* Position the button closer to the white box */
             position: absolute;
-            bottom: 10px; /* Move up closer to the white box */
+            bottom: 15px; /* Move up closer to the white box */
             left: 50%; /* Center horizontally */
             transform: translateX(-50%); /* Center horizontally */
         }
