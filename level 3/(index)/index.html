@@ -54,6 +54,11 @@
             cursor: pointer;
             text-decoration: none;
             margin-top: 10px;
+            /* Position the button outside the white box */
+            position: absolute;
+            bottom: 20px; /* Adjust as needed */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center horizontally */
         }
     </style>
 </head>
@@ -63,7 +68,8 @@
     </div>
     <div class="message-box">
         <img src="imge.png" alt="Image">
-        <a href="imge.png" download class="download-button">Download</a>
     </div>
+    <!-- Move the download button outside the message box -->
+    <a href="imge.png" download class="download-button">Download</a>
 </body>
 </html>
