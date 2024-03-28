@@ -33,28 +33,29 @@
             margin: 20px auto;
             width: 600px;
             /* Adjust the height as needed */
-            height: 200px;
+            height: 250px; /* Increased height to accommodate larger image and button */
             display: flex;
+            flex-direction: column; /* Stack children vertically */
             align-items: center;
-            justify-content: center; /* Center the image horizontally */
-            padding-left: 50px;
+            justify-content: center; /* Center the image vertically */
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             font-family: 'Courier New', Courier, monospace;
             position: relative;
         }
-        img {
-            /* Adjust the height as needed */
-            height: 100%;
+        .message-box img {
+            /* Adjust the size as needed */
+            width: 90%; /* Larger image */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 10px; /* Space between image and button */
         }
         .download-button {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
             background-color: #007bff;
             color: #fff;
             padding: 5px 10px;
             border: none;
             cursor: pointer;
+            text-decoration: none; /* Remove underline from link */
+            margin-top: 10px; /* Space between image and button */
         }
     </style>
 </head>
@@ -63,9 +64,8 @@
         <h1>FHSH1</h1>
     </div>
     <div class="message-box">
-        <img src="imge.png" alt="https://remainderyears0226.github.io/natas/level%203/(index)/imge.png">
+        <img src="imge.png" alt="Image">
         <a href="imge.png" download class="download-button">Download</a>
     </div>
 </body>
 </html>
-
