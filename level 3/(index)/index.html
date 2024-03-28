@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--第一關的密碼是 g9D9cREhslqBKtcA2uocGHPfMZVzeFK6 -->
     <title>FHSH1</title>
     <style>
         body {
@@ -36,15 +35,26 @@
             height: 118.4px;
             display: flex;
             align-items: center;
-            padding-left: 50px;
+            justify-content: center;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             font-family: 'Courier New', Courier, monospace;
+            position: relative; 
         }
-        img {
+        .message-box img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .download-button {
             position: absolute;
-            top: 70px;
-            right: 20px;
-            height: 50px;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -52,11 +62,9 @@
     <div class="header">
         <h1>FHSH1</h1>
     </div>
-    <img src="imge.png" alt="https://remainderyears0226.github.io/natas/level%203/(index)/imge.png">
     <div class="message-box">
-        <img src="img.jpg" alt="https://remainderyears0226.github.io/natas/level%203/(index)/img.jpg
-            ">
+        <img src="img.jpg" alt="Image">
+        <a href="img.jpg" download class="download-button">Download</a> 
     </div>
 </body>
 </html>
-
