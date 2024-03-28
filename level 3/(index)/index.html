@@ -32,19 +32,21 @@
             padding: 20px;
             margin: 20px auto;
             width: 1000px;
+            /* 調整高度以適應內容 */
             height: auto;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* 垂直堆疊子元素 */
             align-items: center;
-            justify-content: center;
+            justify-content: center; /* 垂直居中圖片 */
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             font-family: 'Courier New', Courier, monospace;
             position: relative;
         }
         .message-box img {
-            width: 60%;
-            height: auto;
-            margin-bottom: 10px;
+            /* 調整寬度，稍小於訊息框 */
+            width: 95%;
+            height: auto; /* 保持長寬比 */
+            margin-bottom: 10px; /* 圖片和按鈕之間的間距 */
         }
         .download-button {
             background-color: #007bff;
@@ -54,11 +56,11 @@
             cursor: pointer;
             text-decoration: none;
             margin-top: 10px;
-            /* Position the button outside the white box */
+            /* Position the button closer to the white box */
             position: absolute;
-            bottom: 20px; /* Adjust as needed */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Center horizontally */
+            bottom: 10px; /* 調整為更接近 */
+            left: 50%; /* 水平居中 */
+            transform: translateX(-50%); /* 水平居中 */
         }
     </style>
 </head>
@@ -69,7 +71,7 @@
     <div class="message-box">
         <img src="imge.png" alt="Image">
     </div>
-    <!-- Move the download button outside the message box -->
+    <!-- 將下載按鈕移出訊息框 -->
     <a href="imge.png" download class="download-button">Download</a>
 </body>
 </html>
