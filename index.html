@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three Boxes with Buttons</title>
+    <title>FHSH CYBER SECURITY</title>
     <style>
         /* Reset default margin and padding */
         body, div {
@@ -21,15 +21,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: 30px; /* 修改按钮之间的空格 */
+            margin-right: 30px; /* 修改按钮之间的空格 */                 
             text-decoration: none; /* 移除链接的默认下划线样式 */
             border-radius: 10%;
         }
-
+        
         .custom-button:hover {
             background-color: 	#7B7B7B; /* 鼠标悬停时变亮 */
         }
-
+        
         .custom-button:active {
             transform: scale(0.95); /* 点击时缩小一点 */
         }
@@ -71,13 +71,59 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* 让外部容器占据整个视口高度 */
             margin-top: 0px; /* 将顶部间距设置为0 */
             margin-bottom: 0px; /* 将底部间距设置为0 */
         }
         .center img {
-            max-width: 100%; /* 限制图像最大宽度为其容器宽度 */
-            height: auto; /* 让高度自动调整，保持纵横比 */
+            width: 450px; /* 设置图像宽度为200像素 */
+            height: auto; /* 自动计算高度，保持比例 */
+        }
+
+        /* Style for checkbox and input */
+        .input-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px; /* Add space between each input-container */
+        }
+
+        .input-box {
+            margin-right: 10px;
+        }
+
+        /* Style for checkbox */
+        .checkmark {    
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #eee;
+            margin-right: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .checkmark.checked {
+            background-color: #05ff22;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px; /* 添加顶部间距 */
+            margin-left: auto; /* 设置左侧外边距自动，将容器置于页面中央 */
+            margin-right: auto; /* 设置右侧外边距自动，将容器置于页面中央 */
+            width: 80%; /* 设置容器宽度 */
+        }
+
+        .container > div {
+            flex: 1;
+            margin: 0 10px;
         }
     </style>
 </head>
@@ -87,18 +133,55 @@
         <h1>FHSH CYBER SECURITY</h1>
     </div>
     <div class="center"> <!-- 将图片放入容器中 -->
-       <img src="img.jpg" alt="https://github.com/RemainderYears0226/natas/blob/main/wall/img.jpg">
+        <img src="img.png" alt="/workspaces/natas/img.png">
     </div>
-    <div class="button-container"> <!-- 将按钮放入容器中 -->
-        <a class="custom-button" href="https://remainderyears0226.github.io/natas/level%201/(index)/">
-            <span style="font-size: 30px;">fhsh1</span>
-        </a>
-        <a class="custom-button" href="https://remainderyears0226.github.io/natas/level%202/(index)/">
-            <span style="font-size: 30px;">fhsh2</span>
-        </a>
-        <a class="custom-button" href="https://remainderyears0226.github.io/natas/level%203/(index)/">
-            <span style="font-size: 30px;">fhsh3</span>
-        </a>
+
+    <div class="container">
+        <div>
+            <a class="custom-button" href="https://remainderyears0226.github.io/natas/level%201/(index)/">
+                <span style="font-size: 50px;">fhsh1</span>
+            </a>
+            <div class="input-container">
+                <div class="checkmark" id="checkbox1"></div>
+                <div class="input-box">
+                    <input type="text" id="input1" oninput="checkInput(1)" placeholder="Enter something...">
+                </div>
+            </div>
+        </div>
+        <div>
+            <a class="custom-button" href="https://remainderyears0226.github.io/natas/level%202/(index)/">
+                <span style="font-size: 50px;">fhsh2</span>
+            </a>
+            <div class="input-container">
+                <div class="checkmark" id="checkbox2"></div>
+                <div class="input-box">
+                    <input type="text" id="input2" oninput="checkInput(2)" placeholder="Enter something...">
+                </div>
+            </div>
+        </div>
+        <div>
+            <a class="custom-button" href="https://remainderyears0226.github.io/natas/level%203/(index)/">
+                <span style="font-size: 50px;">fhsh3</span>
+            </a>
+            <div class="input-container">
+                <div class="checkmark" id="checkbox3"></div>
+                <div class="input-box">
+                    <input type="text" id="input3" oninput="checkInput(3)" placeholder="Enter something...">
+                </div>
+            </div>
+        </div>
     </div>
+    
+    <script>
+        function checkInput(index) {
+            const input = document.getElementById(`input${index}`);
+            const checkbox = document.getElementById(`checkbox${index}`);
+            if (input.value === `fhsh${index}`) {
+                checkbox.classList.add('checked');
+            } else {
+                checkbox.classList.remove('checked');
+            }
+        }
+    </script>
 </body>
 </html>
