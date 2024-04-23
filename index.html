@@ -141,7 +141,7 @@
             <div class="input-container">
                 <div class="checkmark" id="checkbox1"></div>
                 <div class="input-box">
-                    <input type="password" id="input1" placeholder="Enter something..." oninput="checkInput1()">
+                    <input type="password" id="input1" placeholder="Enter something..." onkeydown="if (event.keyCode === 13) checkInput1()">
                 </div>
             </div>
         </div>
@@ -152,7 +152,7 @@
             <div class="input-container">
                 <div class="checkmark" id="checkbox2"></div>
                 <div class="input-box">
-                    <input type="password" id="input2" placeholder="Enter something..." oninput="checkInput2()">
+                    <input type="password" id="input2" placeholder="Enter something..." onkeydown="if (event.keyCode === 13) checkInput2()">
                 </div>
             </div>
         </div>
@@ -163,7 +163,7 @@
             <div class="input-container">
                 <div class="checkmark" id="checkbox3"></div>
                 <div class="input-box">
-                    <input type="password" id="input3" placeholder="Enter something..." oninput="checkInput3()">
+                    <input type="password" id="input3" placeholder="Enter something..." onkeydown="if (event.keyCode === 13) checkInput3()">
                 </div>
             </div>
         </div>
@@ -173,28 +173,34 @@
         function checkInput1() {
             const input = document.getElementById('input1');
             const checkbox = document.getElementById('checkbox1');
-            if (input.value === 'FHSH{Information_Security_Entry_Engineer}') {
-                checkbox.classList.add('checked');
-            } else {
-                checkbox.classList.remove('checked');
+            if (event.keyCode === 13) {
+                if (input.value === 'FHSH{Information_Security_Entry_Engineer}') {
+                    checkbox.classList.add('checked');
+                } else {
+                    checkbox.classList.remove('checked');
+                }
             }
         }
         function checkInput2() {
             const input = document.getElementById('input2');
             const checkbox = document.getElementById('checkbox2');
-            if (input.value === 'FHSH{encrypt_decode}') {
-                checkbox.classList.add('checked');
-            } else {
-                checkbox.classList.remove('checked');
+            if (event.keyCode === 13) {
+                if (input.value === 'FHSH{encrypt_decode}') {
+                    checkbox.classList.add('checked');
+                } else {
+                    checkbox.classList.remove('checked');
+                }
             }
         }
         function checkInput3() {
             const input = document.getElementById('input3');
             const checkbox = document.getElementById('checkbox3');
-            if (input.value === 'FHSH{Ste9an09raphy}') {
-                checkbox.classList.add('checked');
-            } else {
-                checkbox.classList.remove('checked');   
+            if (event.keyCode === 13) {
+                if (input.value === 'FHSH{Ste9an09raphy}') {
+                    checkbox.classList.add('checked');
+                } else {
+                    checkbox.classList.remove('checked');   
+                }
             }
         }
     </script>
