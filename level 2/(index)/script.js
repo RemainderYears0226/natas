@@ -31,23 +31,3 @@ function setLoginCookie(value) {
 }
 
 setLoginCookie("0");
-這是我的index.html:
-<!DOCTYPE html>
-<html>
-<head>
-    <!--第二關的flag-2/3: NyeXB0X2Rl -->
-    <!--小工具 : https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false) -->
-    <title>FHSH2</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="script.js"></script>
-</head>
-<body oncontextmenu="return false;">
-    <div class="header">
-        <h1>FHSH2</h1>
-    </div>
-    <img src="img.jpg" alt="Level 2 Image">
-    <div class="message-box">
-        <p>你可以在這裡找到下一關的Flag，但是我們對它做過了一些處理...</p>
-    </div>
-</body>
-</html>
