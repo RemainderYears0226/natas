@@ -8,12 +8,14 @@ function getCookieValue(cookieName) {
     var cookies = document.cookie.split(';');
     for (var i = 0; i < cookies.length; i++) {
         var cookie = cookies[i].trim();
-        if (cookie.indexOf(cookieName) === 0) {
-            return cookie.substring(cookieName.length + 1); // 修正此行
+        var cookieParts = cookie.split('=');
+        if (cookieParts[0] === cookieName) {
+            return cookieParts[1]; // 返回 cookie 的值
         }
     }
     return "";
 }
+
 
 function showFlag() {
     var messageBox = document.querySelector('.message-box');
