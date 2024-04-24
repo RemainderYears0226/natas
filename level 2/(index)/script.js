@@ -9,21 +9,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (loginValue === "1") {
         showFlag();
-    } else {
-        clearMessageBox(); // Clear message box if loginValue is not 1
     }
 
     function showFlag() {
         var messageBox = document.querySelector('.message-box');
         if (messageBox) {
-            messageBox.innerHTML = '<p>Flag: Flag is here!</p>';
-        }
-    }
-
-    function clearMessageBox() {
-        var messageBox = document.querySelector('.message-box');
-        if (messageBox) {
-            messageBox.innerHTML = ''; // Clear message box content
+            // 清空原本的文字
+            messageBox.innerHTML = '';
+            // 插入 flag
+            messageBox.innerHTML += '<p>Flag: Flag is here!</p>';
         }
     }
 
