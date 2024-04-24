@@ -9,21 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (loginValue === "1") {
         showFlag();
-    } else {
-        clearMessageBox();
     }
 
     function showFlag() {
         var messageBox = document.querySelector('.message-box');
         if (messageBox) {
             messageBox.innerHTML = '<p>Flag: Flag is here!</p>';
-        }
-    }
-
-    function clearMessageBox() {
-        var messageBox = document.querySelector('.message-box');
-        if (messageBox) {
-            messageBox.innerHTML = '';
         }
     }
 
@@ -41,6 +32,17 @@ document.addEventListener('DOMContentLoaded', function() {
     function setLoginCookie(value) {
         // 設置 login cookie 的值
         document.cookie = "login=" + value;
+    }
+
+    if (loginValue !== "1") {
+        clearMessageBox();
+    }
+
+    function clearMessageBox() {
+        var messageBox = document.querySelector('.message-box');
+        if (messageBox) {
+            messageBox.innerHTML = '';
+        }
     }
 
     setLoginCookie("0");
