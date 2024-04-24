@@ -28,6 +28,12 @@ if (loginValue === "1") {
 function setLoginCookie(value) {
     // 設置 login cookie 的值
     document.cookie = "login=" + value;
+    // 檢查是否設置了新的 cookie 值
+    var newLoginValue = getCookieValue("login");
+    if (newLoginValue === "1") {
+        showFlag();
+    }
 }
+
 
 setLoginCookie("0");
