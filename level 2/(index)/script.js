@@ -1,9 +1,8 @@
-// 修改 setLoginCookie 函數，使其在 console 中可被調用
-window.setLoginCookie = function(value) {
-    // 設置 login cookie 的值
-    document.cookie = "login=" + value;
-}
-
+/ 第二關的flag-3/3: Y29kZX0=
+document.addEventListener('contextmenu', function(e) {
+    alert('在這裡右鍵不能使用喔!');
+    e.preventDefault();
+}, false);
 function getCookieValue(cookieName) {
     var cookies = document.cookie.split(';');
     for (var i = 0; i < cookies.length; i++) {
@@ -26,8 +25,30 @@ if (loginValue === "1") {
     showFlag();
 }
 
-// 在 console 中提示使用者設置 cookies 的方法
-console.log("要更改 cookies 的值，請在 console 中執行 setLoginCookie('1') 並按下 Enter 鍵。");
+function setLoginCookie(value) {
+    // 設置 login cookie 的值
+    document.cookie = "login=" + value;
+}
 
-// 在 console 中提示使用者刷新頁面
-console.log("請刷新頁面來查看結果。");
+setLoginCookie("0");
+這是我的index.html:
+<!DOCTYPE html>
+<html>
+<head>
+    <!--第二關的flag-2/3: NyeXB0X2Rl -->
+    <!--小工具 : https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false) -->
+    <title>FHSH2</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body oncontextmenu="return false;">
+    <div class="header">
+        <h1>FHSH2</h1>
+    </div>
+    <img src="img.jpg" alt="Level 2 Image">
+    <div class="message-box">
+        <p>你可以在這裡找到下一關的Flag，但是我們對它做過了一些處理...</p>
+    </div>
+</body>
+</html>
+
