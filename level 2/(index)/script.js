@@ -9,12 +9,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (loginValue === "1") {
         showFlag();
+    } else {
+        clearMessageBox(); // Clear message box if loginValue is not 1
     }
 
     function showFlag() {
         var messageBox = document.querySelector('.message-box');
         if (messageBox) {
             messageBox.innerHTML = '<p>Flag: Flag is here!</p>';
+        }
+    }
+
+    function clearMessageBox() {
+        var messageBox = document.querySelector('.message-box');
+        if (messageBox) {
+            messageBox.innerHTML = ''; // Clear message box content
         }
     }
 
@@ -32,17 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function setLoginCookie(value) {
         // 設置 login cookie 的值
         document.cookie = "login=" + value;
-    }
-
-    if (loginValue !== "1") {
-        clearMessageBox();
-    }
-
-    function clearMessageBox() {
-        var messageBox = document.querySelector('.message-box');
-        if (messageBox) {
-            messageBox.innerHTML = '';
-        }
     }
 
     setLoginCookie("0");
