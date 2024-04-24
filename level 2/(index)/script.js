@@ -9,12 +9,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (loginValue === "1") {
         showFlag();
+    } else {
+        clearMessageBox();
     }
 
     function showFlag() {
         var messageBox = document.querySelector('.message-box');
         if (messageBox) {
-            messageBox.innerHTML += '<p>Flag: Flag is here!</p>';
+            messageBox.innerHTML = '<p>Flag: Flag is here!</p>';
+        }
+    }
+
+    function clearMessageBox() {
+        var messageBox = document.querySelector('.message-box');
+        if (messageBox) {
+            messageBox.innerHTML = '';
         }
     }
 
