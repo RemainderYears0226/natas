@@ -17,13 +17,22 @@ function getCookieValue(cookieName) {
 
 function showFlag() {
   var messageBox = document.querySelector('.message-box');
-  if (messageBox) { // 檢查 .message-box 元素是否存在
-    messageBox.innerHTML += '<p>恭喜你找到了 Flag! 請透過 F12 開發者工具中的 Application 標籤,將 login Cookie 值改為 1 來顯示 Flag。</p>';
-    messageBox.innerHTML += '<p>Flag: Flag is here!</p>';
+  if (messageBox) {
+    messageBox.innerHTML = '<p>Flag: Flag is here!</p>';
   }
 }
 
 var loginValue = getCookieValue("login");
 if (loginValue === "1") {
   showFlag();
+} else {
+  setLoginCookie("0"); // 設定初始 cookie 值為 0
+  var messageBox = document.querySelector('.message-box');
+  if (messageBox) {
+    messageBox.innerHTML = '<p>你可以在這裡找到下一關的 Flag，但是我們對它做過了一些處理...</p><p>提示: 請透過 F12 開發者工具中的 Application 標籤,將 login Cookie 值改為 1。</p>';
+  }
+}
+
+function setLoginCookie(value) {
+  document.cookie = "login=" + value;
 }
