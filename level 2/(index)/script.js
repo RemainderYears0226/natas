@@ -34,13 +34,15 @@ var loginValue = getCookieValue("login");
 // 如果 login cookie 的值為 1，顯示 flag
 if (loginValue === "1") {
     showFlag();
-} else {
-    // 否則設置 login cookie 的值為 0
-    setLoginCookie("0");
 }
 
 // 設置 login cookie 的函數
 function setLoginCookie(value) {
     // 設置 login cookie 的值
     document.cookie = "login=" + value;
+    
+    // 設置 cookie 後手動觸發檢查 cookie 值並顯示 flag 的程式碼
+    if (value === "1") {
+        showFlag();
+    }
 }
