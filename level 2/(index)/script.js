@@ -1,8 +1,10 @@
-/ 第二關的flag-3/3: Y29kZX0=
-document.addEventListener('contextmenu', function(e) {
-    alert('在這裡右鍵不能使用喔!');
-    e.preventDefault();
-}, false);
+// 获取并显示 flag 的函数
+function showFlag() {
+    var messageBox = document.querySelector('.message-box');
+    messageBox.innerHTML += '<p>Flag: Flag is here!</p>';
+}
+
+// 获取 cookie 值的函数
 function getCookieValue(cookieName) {
     var cookies = document.cookie.split(';');
     for (var i = 0; i < cookies.length; i++) {
@@ -14,41 +16,17 @@ function getCookieValue(cookieName) {
     return "";
 }
 
-function showFlag() {
-    var messageBox = document.querySelector('.message-box');
-    messageBox.innerHTML += '<p>Flag: Flag is here!</p>';
-}
-
+// 检查 cookie 值是否为 1，如果是则显示 flag
 var loginValue = getCookieValue("login");
-
 if (loginValue === "1") {
     showFlag();
 }
 
-function setLoginCookie(value) {
-    // 設置 login cookie 的值
+// 将设置 cookie 的函数移动到全局作用域，以便在浏览器开发者工具中调用
+window.setLoginCookie = function(value) {
     document.cookie = "login=" + value;
+    // 在更改 cookie 值后，检查并显示 flag（如果 cookie 值为 1）
+    if (value === "1") {
+        showFlag();
+    }
 }
-
-setLoginCookie("0");
-這是我的index.html:
-<!DOCTYPE html>
-<html>
-<head>
-    <!--第二關的flag-2/3: NyeXB0X2Rl -->
-    <!--小工具 : https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false) -->
-    <title>FHSH2</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="script.js"></script>
-</head>
-<body oncontextmenu="return false;">
-    <div class="header">
-        <h1>FHSH2</h1>
-    </div>
-    <img src="img.jpg" alt="Level 2 Image">
-    <div class="message-box">
-        <p>你可以在這裡找到下一關的Flag，但是我們對它做過了一些處理...</p>
-    </div>
-</body>
-</html>
-
