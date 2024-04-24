@@ -1,8 +1,9 @@
-// 第二關的flag-3/3: Y29kZX0=
-document.addEventListener('contextmenu', function(e) {
-    alert('在這裡右鍵不能使用喔!');
-    e.preventDefault();
-}, false);
+// 修改 setLoginCookie 函數，使其在 console 中可被調用
+window.setLoginCookie = function(value) {
+    // 設置 login cookie 的值
+    document.cookie = "login=" + value;
+}
+
 function getCookieValue(cookieName) {
     var cookies = document.cookie.split(';');
     for (var i = 0; i < cookies.length; i++) {
@@ -25,15 +26,8 @@ if (loginValue === "1") {
     showFlag();
 }
 
-function setLoginCookie(value) {
-    // 設置 login cookie 的值
-    document.cookie = "login=" + value;
-    // 檢查是否設置了新的 cookie 值
-    var newLoginValue = getCookieValue("login");
-    if (newLoginValue === "1") {
-        showFlag();
-    }
-}
+// 在 console 中提示使用者設置 cookies 的方法
+console.log("要更改 cookies 的值，請在 console 中執行 setLoginCookie('1') 並按下 Enter 鍵。");
 
-
-setLoginCookie("0");
+// 在 console 中提示使用者刷新頁面
+console.log("請刷新頁面來查看結果。");
