@@ -3,12 +3,13 @@ document.addEventListener('contextmenu', function(e) {
     alert('在這裡右鍵不能使用喔!');
     e.preventDefault();
 }, false);
+
 function getCookieValue(cookieName) {
     var cookies = document.cookie.split(';');
     for (var i = 0; i < cookies.length; i++) {
         var cookie = cookies[i].trim();
         if (cookie.indexOf(cookieName) === 0) {
-            return cookie.substring(cookieName.length + 1);
+            return cookie.substring(cookieName.length + 1); // 修正此行
         }
     }
     return "";
@@ -25,16 +26,9 @@ if (loginValue === "1") {
     showFlag();
 }
 
-function getCookieValue(cookieName) {
-    var cookies = document.cookie.split(';');
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i].trim();
-        if (cookie.indexOf(cookieName) === 0) {
-            return cookie.substring(cookieName.length + 1); // 修改這一行
-        }
-    }
-    return "";
+function setLoginCookie(value) {
+    // 設置 login cookie 的值
+    document.cookie = "login=" + value;
 }
-
 
 setLoginCookie("0");
