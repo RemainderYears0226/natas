@@ -17,8 +17,10 @@ function getCookieValue(cookieName) {
 
 function showFlag() {
   var messageBox = document.querySelector('.message-box');
-  messageBox.innerHTML += '<p>恭喜你找到了 Flag! 請透過 F12 開發者工具中的 Application 標籤,將 login Cookie 值改為 1 來顯示 Flag。</p>';
-  messageBox.innerHTML += '<p>Flag: Flag is here!</p>';
+  if (messageBox) { // 檢查 .message-box 元素是否存在
+    messageBox.innerHTML += '<p>恭喜你找到了 Flag! 請透過 F12 開發者工具中的 Application 標籤,將 login Cookie 值改為 1 來顯示 Flag。</p>';
+    messageBox.innerHTML += '<p>Flag: Flag is here!</p>';
+  }
 }
 
 var loginValue = getCookieValue("login");
