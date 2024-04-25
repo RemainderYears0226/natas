@@ -1,10 +1,5 @@
-document.addEventListener('contextmenu', function(e) {
-    alert('在這裡右鍵不能使用喔!');
-    e.preventDefault();
-}, false);
-
 document.addEventListener('DOMContentLoaded', function() {
-    var loginValue = getCookieValue("login");
+    var loginValue = getCookieValue("loginin");
 
     if (loginValue === "1") {
         showFlag();
@@ -30,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function setLoginCookie(value) {
-        document.cookie = "login=" + value;
+        document.cookie = "loginin=" + value;
     }
 
     setLoginCookie("0");
