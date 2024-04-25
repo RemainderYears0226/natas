@@ -1,4 +1,3 @@
-// 第二關的flag-3/3: Y29kZX0=
 document.addEventListener('contextmenu', function(e) {
     alert('在這裡右鍵不能使用喔!');
     e.preventDefault();
@@ -14,10 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function showFlag() {
         var messageBox = document.querySelector('.message-box');
         if (messageBox) {
-            // 清空原本的文字
             messageBox.innerHTML = '';
-            // 插入 flag
-            messageBox.innerHTML += '<p>Flag: Flag is here!</p>';
+            messageBox.innerHTML += '<p>Flag: FHSH{encrypt_decode}</p>';
         }
     }
 
@@ -33,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function setLoginCookie(value) {
-        // 設置 login cookie 的值
         document.cookie = "login=" + value;
     }
 
