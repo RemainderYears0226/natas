@@ -12,10 +12,13 @@
     height: 20px;
     background: linear-gradient(to right, red, yellow, green);
     margin-top: 10px;
+    position: relative;
   }
   .indicator {
-    position: relative;
-    top: -10px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
   }
 </style>
