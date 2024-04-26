@@ -7,8 +7,17 @@
   body { font-family: Arial, sans-serif; }
   .container { max-width: 300px; margin: auto; padding: 20px; }
   input, button { width: 100%; padding: 10px; margin: 10px 0; }
-  .scale { width: 100%; height: 20px; background: linear-gradient(to right, red, yellow, green); }
-  .scale-bit { position: absolute; top: 50%; transform: translateY(-50%); }
+  /* 新增的量表樣式 */
+  .scale {
+    height: 20px;
+    background: linear-gradient(to right, red, yellow, green);
+    margin-top: 10px;
+  }
+  .indicator {
+    position: relative;
+    top: -10px;
+    text-align: center;
+  }
 </style>
 </head>
 <body>
@@ -17,8 +26,9 @@
   <input type="text" id="password" placeholder="請輸入密碼">
   <button onclick="calculateEntropy()">計算熵值</button>
   <p id="entropy">熵值將顯示在這裡</p>
+  <!-- 新增的量表 -->
   <div class="scale">
-    <span class="scale-bit" id="scaleBit"></span>
+    <div class="indicator" id="indicator">0 bits</div>
   </div>
 </div>
 
@@ -28,14 +38,23 @@ function calculateEntropy() {
   var charsetSize = calculateCharsetSize(password);
   var entropy = Math.log2(Math.pow(charsetSize, password.length)).toFixed(2);
   document.getElementById('entropy').textContent = '密碼熵值: ' + entropy + ' bits';
-  
-  // Update the position of the scale bit
-  var scaleBit = document.getElementById('scaleBit');
+
+  // 更新量表指示位置
+  var indicator = document.getElementById('indicator');
   var scaleWidth = document.querySelector('.scale').clientWidth;
-  var bitPosition = (entropy / 8) * scaleWidth; // Assuming 8 bits per character
-  scaleBit.style.left = bitPosition + 'px';
+  var position = (entropy / 8) * scaleWidth; // 將熵值轉換為比例
+  indicator.style.left = position + 'px';
+  indicator.textContent = entropy + ' bits';
 }
-// Rest of your existing code...
+
+function calculateCharsetSize(password) {
+  var charset = '';
+  if (password.match(/[a-z]/)) charset += 'abcdefghijklmnopqrstuvwxyz';
+  if (password.match(/[A-Z]/)) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  if (password.match(/[0-9]/)) charset += '0123456789';
+  if (password.match(/[^a-zA-Z0-9]/)) charset += ' !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+  return charset.length;
+}
 </script>
 </body>
 </html>
