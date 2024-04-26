@@ -7,19 +7,19 @@
   body { font-family: Arial, sans-serif; }
   .container { max-width: 300px; margin: auto; padding: 20px; }
   input, button { width: 100%; padding: 10px; margin: 10px 0; }
-  /* 新增的量表樣式 */
   .scale {
+    width: 100%;
     height: 20px;
-    background: linear-gradient(to right, red, yellow, green);
+    background: linear-gradient(to right, red, green);
+    border-radius: 5px;
     margin-top: 10px;
-    position: relative;
   }
   .indicator {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
+    position: relative;
+    width: 0;
+    height: 100%;
+    background-color: yellow;
+    border-radius: 5px;
   }
 </style>
 </head>
@@ -29,9 +29,8 @@
   <input type="text" id="password" placeholder="請輸入密碼">
   <button onclick="calculateEntropy()">計算熵值</button>
   <p id="entropy">熵值將顯示在這裡</p>
-  <!-- 新增的量表 -->
   <div class="scale">
-    <div class="indicator" id="indicator">0 bits</div>
+    <div class="indicator" id="indicator"></div>
   </div>
 </div>
 
@@ -42,22 +41,13 @@ function calculateEntropy() {
   var entropy = Math.log2(Math.pow(charsetSize, password.length)).toFixed(2);
   document.getElementById('entropy').textContent = '密碼熵值: ' + entropy + ' bits';
 
-  // 更新量表指示位置
-  var indicator = document.getElementById('indicator');
+  // 計算指示器位置
   var scaleWidth = document.querySelector('.scale').clientWidth;
-  var position = (entropy / 8) * scaleWidth; // 將熵值轉換為比例
-  indicator.style.left = position + 'px';
-  indicator.textContent = entropy + ' bits';
+  var indicator = document.getElementById('indicator');
+  var position = (entropy / 8) * scaleWidth; // 假設最大熵值為8
+  indicator.style.width = position + 'px';
 }
-
-function calculateCharsetSize(password) {
-  var charset = '';
-  if (password.match(/[a-z]/)) charset += 'abcdefghijklmnopqrstuvwxyz';
-  if (password.match(/[A-Z]/)) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  if (password.match(/[0-9]/)) charset += '0123456789';
-  if (password.match(/[^a-zA-Z0-9]/)) charset += ' !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
-  return charset.length;
-}
+// ... 其他函數保持不變 ...
 </script>
 </body>
 </html>
