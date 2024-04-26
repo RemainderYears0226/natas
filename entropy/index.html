@@ -35,7 +35,15 @@ function calculateEntropy() {
   var entropyPercentage = (entropy / 8) * 100; // Assuming 8 bits per character
   fill.style.width = entropyPercentage + '%';
 }
-// ... (rest of your existing code)
+
+function calculateCharsetSize(password) {
+  var charset = '';
+  if (password.match(/[a-z]/)) charset += 'abcdefghijklmnopqrstuvwxyz';
+  if (password.match(/[A-Z]/)) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  if (password.match(/[0-9]/)) charset += '0123456789';
+  if (password.match(/[^a-zA-Z0-9]/)) charset += ' !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+  return charset.length;
+}
 </script>
 </body>
 </html>
