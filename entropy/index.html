@@ -15,7 +15,7 @@
 <body>
 <div class="container">
   <h2>密碼熵值計算器</h2>
-  <input type="text" id="password" placeholder="請輸入密碼">
+  <input type="password" id="password" placeholder="請輸入密碼">
   <button onclick="calculateEntropy()">計算熵值</button>
   <p id="entropy">熵值將顯示在這裡</p>
   <div id="strength-meter">
@@ -27,8 +27,8 @@
 function calculateEntropy() {
   var password = document.getElementById('password').value;
   var charsetSize = calculateCharsetSize(password);
-  var entropy = Math.log2(Math.pow(charsetSize, password.length)).toFixed(2);
-  document.getElementById('entropy').textContent = '密碼熵值: ' + entropy + ' bits';
+  var entropy = Math.log2(Math.pow(charsetSize, password.length));
+  document.getElementById('entropy').textContent = '密碼熵值: ' + entropy.toFixed(2) + ' bits';
 
   // Update strength meter
   var strengthBar = document.getElementById('strength-bar');
@@ -38,7 +38,12 @@ function calculateEntropy() {
 }
 
 function calculateCharsetSize(password) {
-  // ... (same as before)
+  var charset = '';
+  if (password.match(/[a-z]/)) charset += 'abcdefghijklmnopqrstuvwxyz';
+  if (password.match(/[A-Z]/)) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  if (password.match(/[0-9]/)) charset += '0123456789';
+  if (password.match(/[^a-zA-Z0-9]/)) charset += ' !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+  return charset.length;
 }
 
 function getStrengthColor(strength) {
