@@ -8,20 +8,19 @@
             font-family: Arial, sans-serif;
         }
         .container {
-            width: 1285.6px;
-            height: 729.6px;
+            width: 1040.6px;
+            height: 670.6px;
             position: relative;
         }
         .login-box {
-            width: 1000px; /* 增加寬度 */
-            height: 402.8px;
+            width: 1100px;
+            height: 360.8px;
             background-color: white;
             position: absolute;
-            top: 40%; /* 向上移動 */
-            left: 50%;
+            top: 50%;
+            left: 73%;
             transform: translate(-50%, -50%);
-            border-radius: 5px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            border-radius: 30px;
             padding: 20px;
         }
         .logo {
@@ -33,8 +32,8 @@
             position: absolute;
             top: 68px;
             left: 20px;
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 30px;
+            font-family: Arial, sans-serif;
         }
         .use-google-account {
             position: absolute;
@@ -45,44 +44,73 @@
         }
         .input-field {
             position: absolute;
-            top: 50%;
-            right: 20px;
+            top: 36.5%;
+            right: 35px;
             transform: translateY(-50%);
-            width: 382.8px;
-            height: 54px;
-            border: 1px solid #ccc;
+            width: 480.8px;
+            height: 40px;
+            border: 1px solid #000;
             border-radius: 5px;
             padding: 10px;
             font-size: 16px;
         }
         .forgot-email {
             position: absolute;
-            bottom: 68px;
-            right: 20px;
+            bottom: 200px;
+            right: 412px;
             font-size: 14px;
             color: #0B57D0;
         }
         .guest-mode {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
+            bottom: 120px;
+            right: 187px;
             font-size: 14px;
             color: #555;
         }
         .learn-guest-mode {
             color: #0B57D0;
         }
+        .next-button {
+            position: absolute;
+            bottom: 35px;
+            right: 30px;
+            padding: 10px 20px;
+            background-color: #0b5bdb;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            color: #555;
+            position: absolute;
+            bottom: 95px; /* 相对于 .container 定位 */
+            right: -300px; /* 相对于 .container 定位 */
+        }
+        .footer span {
+            margin: 0 15px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="login-box">
-            <img src="img.jpg" alt="Logo" class="logo" width="48" height="48">
+            <img src="img.jpg" width="48" height="48">
             <div class="login-text">登入</div>
             <div class="use-google-account">使用您的 Google 帳戶</div>
             <input type="text" class="input-field" placeholder="電子郵件地址或電話號碼">
             <div class="forgot-email">忘記電子郵件地址？</div>
             <div class="guest-mode">如果這不是你的電腦，請使用訪客模式以私密方式登入。<br><span class="learn-guest-mode">進一步瞭解如何使用訪客模式</span></div>
+            <button class="next-button">下一步</button>
+        </div>
+        <div class="footer">
+            <span>說明</span>
+            <span>隱私權設定</span>
+            <span>條款</span>
         </div>
     </div>
 </body>
