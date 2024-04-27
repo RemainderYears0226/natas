@@ -1,75 +1,77 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login Page</title>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #F0F4F9;
-    }
-    .container {
-        width: 1285.6px;
-        height: 729.6px;
-        margin: 50px auto;
-        background-color: white;
-        position: relative;
-    }
-    .image {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-    }
-    .login-text {
-        position: absolute;
-        top: 80px;
-        left: 20px;
-        font-size: 16px;
-        color: #0B57D0;
-    }
-    .google-account {
-        position: absolute;
-        top: 120px;
-        left: 20px;
-        font-size: 12px;
-        color: #0B57D0;
-    }
-    .input-box {
-        width: 382.8px;
-        height: 54px;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
-    .forget-email {
-        position: absolute;
-        top: 84px;
-        right: 20px;
-        font-size: 12px;
-        color: #0B57D0;
-    }
-    .guest-mode {
-        position: absolute;
-        top: 150px;
-        right: 20px;
-        font-size: 12px;
-        color: #0B57D0;
-    }
+  body {
+    background-color: #F0F4F9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    width: 1285.6px;
+    height: 729.6px;
+    background-color: white;
+    border: 1px solid #000;
+    position: relative;
+  }
+  .login-image {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  .login-text {
+    position: absolute;
+    top: 72px;
+    left: 20px;
+    font-size: 16px;
+    color: #0B57D0;
+  }
+  .google-account {
+    position: absolute;
+    top: 102.8px;
+    left: 20px;
+    font-size: 12px;
+    color: #0B57D0;
+  }
+  .input-box {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 382.8px;
+    height: 54px;
+  }
+  .forgot-email {
+    position: absolute;
+    top: 84px;
+    right: 20px;
+    font-size: 14px;
+    color: #0B57D0;
+  }
+  .guest-mode {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 14px;
+    color: #0B57D0;
+  }
 </style>
 </head>
 <body>
-
 <div class="container">
-    <img class="image" src="img.jpg" alt="登入圖片" width="48" height="48">
-    <div class="login-text">登入</div>
-    <div class="google-account">使用您的 Google 帳戶</div>
-    <input class="input-box" type="text" placeholder="電子郵件地址或電話號碼">
-    <div class="forget-email">忘記電子郵件地址？</div>
-    <div class="guest-mode">如果這不是你的電腦，請使用訪客模式以私密方式登入。</div>
-    <div class="further-info">進一步瞭解如何使用訪客模式</div>
+  <img src="img.jpg" alt="Login Image" class="login-image">
+  <div class="login-text">登入</div>
+  <div class="google-account">使用您的 Google 帳戶</div>
+  <input type="text" class="input-box" placeholder="電子郵件地址或電話號碼">
+  <div class="forgot-email">忘記電子郵件地址？</div>
+  <div class="guest-mode">如果這不是你的電腦，請使用訪客模式以私密方式登入。</div>
+  <div class="further-info">進一步瞭解如何使用訪客模式</div>
 </div>
-
 </body>
 </html>
