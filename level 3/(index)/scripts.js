@@ -1,5 +1,3 @@
-// scripts.js
-
 const googleLoginButton = document.querySelector('.google-login-button');
 
 googleLoginButton.addEventListener('click', () => {
@@ -7,10 +5,8 @@ googleLoginButton.addEventListener('click', () => {
     const userLoggedIn = confirm('模擬 Google 登入？');
 
     if (userLoggedIn) {
-        // Show incorrect flag message
         alert('這是錯誤的地方。');
     } else {
-        // Show correct flag message
         alert('你找到了正確的地方！');
     }
 });
