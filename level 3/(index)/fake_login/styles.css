@@ -1,6 +1,5 @@
 /* styles.css */
-
-/* 整個頁面的樣式 */
+/* 這裡是你的 CSS 樣式表 */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -18,7 +17,7 @@ body {
 
 /* 長方形框 */
 .rectangle-box {
-    width: 60%; /* 調整長方形框的寬度 */
+    width: 40%; /* 調整長方形框的寬度 */
     max-width: 600px; /* 最大寬度，避免過寬 */
     margin: 10% auto; /* 上下空白，左右置中 */
     padding: 20px;
