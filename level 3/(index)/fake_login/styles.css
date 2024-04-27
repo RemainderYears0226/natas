@@ -1,1 +1,23 @@
+/* styles.css */
+
+/* Add your custom styles here */
+.gray-button {
+    background-color: #ccc;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.custom-button {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.rectangle-box {
+    border: 2px solid #333;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
 
