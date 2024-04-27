@@ -1,51 +1,61 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>模擬 Google 登入</title>
+    <title>使用 Google 帳戶登入</title>
     <style>
+        /* CSS 样式可以根据需要进行修改和美化 */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
             background-color: #fff;
+            padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        input[type="email"], input[type="password"] {
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 400px;
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
+            text-align: center;
         }
-        button {
-            width: 100%;
-            padding: 10px;
+        h1 {
+            color: #4285f4;
+        }
+        .button {
             background-color: #4285f4;
             color: #fff;
+            padding: 10px 20px;
             border: none;
             border-radius: 3px;
             cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
         }
-        button:hover {
-            background-color: #3367d6;
+        .button:hover {
+            background-color: #357ae8;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>使用 Google 帳戶登入</h1>
-        <form>
-            <input type="email" placeholder="電子郵件地址" required>
-            <input type="password" placeholder="密碼" required>
-            <button type="submit">登入</button>
-        </form>
+        <p>請點擊下方按鈕進行登入：</p>
+        <button class="button" onclick="simulateLogin()">登入</button>
     </div>
+
+    <script>
+        // 模擬登入功能
+        function simulateLogin() {
+            alert("這是一個模擬頁面，沒有實際登入功能。");
+            // 在這裡可以添加跳轉或其他相應操作
+        }
+    </script>
 </body>
 </html>
