@@ -1,12 +1,16 @@
+// scripts.js
+
 const googleLoginButton = document.querySelector('.google-login-button');
-const messageBox = document.querySelector('.message-box');
 
 googleLoginButton.addEventListener('click', () => {
+    // Simulate Google login process (for demonstration purposes)
     const userLoggedIn = confirm('模擬 Google 登入？');
 
     if (userLoggedIn) {
-        messageBox.innerHTML = '<p>這是錯誤的地方。</p>';
+        // Show incorrect flag message
+        alert('這是錯誤的地方。');
     } else {
-        messageBox.innerHTML = '<p>你找到了正確的地方！</p>';
+        // Show correct flag message
+        alert('你找到了正確的地方！');
     }
 });
