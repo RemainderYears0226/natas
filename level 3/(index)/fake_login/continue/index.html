@@ -1,77 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login Page</title>
-<style>
-  body {
-    background-color: #F0F4F9;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  .container {
-    width: 1285.6px;
-    height: 729.6px;
-    background-color: white;
-    border: 1px solid #000;
-    position: relative;
-  }
-  .login-image {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-  }
-  .login-text {
-    position: absolute;
-    top: 72px;
-    left: 20px;
-    font-size: 16px;
-    color: #0B57D0;
-  }
-  .google-account {
-    position: absolute;
-    top: 102.8px;
-    left: 20px;
-    font-size: 12px;
-    color: #0B57D0;
-  }
-  .input-box {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 382.8px;
-    height: 54px;
-  }
-  .forgot-email {
-    position: absolute;
-    top: 84px;
-    right: 20px;
-    font-size: 14px;
-    color: #0B57D0;
-  }
-  .guest-mode {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-size: 14px;
-    color: #0B57D0;
-  }
-</style>
+    <title>登入頁面</title>
+    <style>
+        body {
+            background-color: #F0F4F9;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 1285.6px;
+            height: 729.6px;
+            position: relative;
+        }
+        .login-box {
+            width: 885.6px;
+            height: 402.8px;
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .login-text {
+            position: absolute;
+            top: 68px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .use-google-account {
+            position: absolute;
+            top: 116.8px;
+            left: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+        .input-field {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            width: 382.8px;
+            height: 54px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .forgot-email {
+            position: absolute;
+            bottom: 68px;
+            right: 20px;
+            font-size: 14px;
+            color: #0B57D0;
+        }
+        .guest-mode {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        .learn-guest-mode {
+            color: #0B57D0;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-  <img src="img.jpg" alt="Login Image" class="login-image">
-  <div class="login-text">登入</div>
-  <div class="google-account">使用您的 Google 帳戶</div>
-  <input type="text" class="input-box" placeholder="電子郵件地址或電話號碼">
-  <div class="forgot-email">忘記電子郵件地址？</div>
-  <div class="guest-mode">如果這不是你的電腦，請使用訪客模式以私密方式登入。</div>
-  <div class="further-info">進一步瞭解如何使用訪客模式</div>
-</div>
+    <div class="container">
+        <div class="login-box">
+            <img src="img.jpg" alt="Logo" class="logo" width="48" height="48">
+            <div class="login-text">登入</div>
+            <div class="use-google-account">使用您的 Google 帳戶</div>
+            <input type="text" class="input-field" placeholder="電子郵件地址或電話號碼">
+            <div class="forgot-email">忘記電子郵件地址？</div>
+            <div class="guest-mode">如果這不是你的電腦，請使用訪客模式以私密方式登入。<br><span class="learn-guest-mode">進一步瞭解如何使用訪客模式</span></div>
+        </div>
+    </div>
 </body>
 </html>
