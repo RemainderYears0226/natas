@@ -25,19 +25,19 @@
         }
         .logo {
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 50px;
+            left: 50px;
         }
         .login-text {
             position: absolute;
-            top: 68px;
+            top: 90px;
             left: 20px;
             font-size: 30px;
             font-family: Arial, sans-serif;
         }
         .use-google-account {
             position: absolute;
-            top: 116.8px;
+            top: 138.8px;
             left: 20px;
             font-size: 16px;
             color: #555;
@@ -83,16 +83,31 @@
             font-size: 16px;
             cursor: pointer;
         }
+        .next-button:hover {
+            background-color: #0a51c2; 
+        }
         .footer {
             text-align: center;
             font-size: 13px;
             color: #555;
             position: absolute;
-            bottom: 95px; /* 相对于 .container 定位 */
-            right: -300px; /* 相对于 .container 定位 */
+            bottom: 95px; 
+            right: -300px;
         }
         .footer span {
             margin: 0 15px;
+        }
+        .nonono {
+            position: absolute;
+            top: 335px;
+            left: 930px;
+            font-size: 16px;
+            color: #555;
+            border: none;
+            background-color: white;
+        }
+        .nonono:hover {
+            background-color: #f0f0f0; 
         }
     </style>
 </head>
@@ -104,6 +119,7 @@
             <div class="use-google-account">使用您的 Google 帳戶</div>
             <input type="text" class="input-field" placeholder="電子郵件地址或電話號碼">
             <div class="forgot-email">忘記電子郵件地址？</div>
+            <button class="nonono">取消</button>
             <div class="guest-mode">如果這不是你的電腦，請使用訪客模式以私密方式登入。<br><span class="learn-guest-mode">進一步瞭解如何使用訪客模式</span></div>
             <button class="next-button">下一步</button>
         </div>
@@ -113,5 +129,15 @@
             <span>條款</span>
         </div>
     </div>
+    <script>
+        document.querySelector('.next-button').addEventListener('click', function() {
+            window.location.href = 'password.html';
+        });
+    </script>
+    <script>
+        document.querySelector('.nonono').addEventListener('click', function() {
+            window.location.href = 'true.html';
+        });
+    </script>
 </body>
 </html>
