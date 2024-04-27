@@ -1,23 +1,12 @@
 // scripts.js
 
 document.addEventListener('DOMContentLoaded', function() {
-    const loginForm = document.getElementById('login-form');
+    const googleLoginButton = document.querySelector('.custom-button');
 
-    loginForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form submission
+    googleLoginButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
 
-        const emailInput = document.getElementById('email');
-        const emailValue = emailInput.value;
-
-        // Simulate Google login process (for demonstration purposes)
-        const userLoggedIn = confirm('模擬 Google 登入？');
-
-        if (userLoggedIn) {
-            // Redirect to incorrect page
-            window.location.href = 'incorrect.html';
-        } else {
-            // Redirect to correct page
-            window.location.href = 'correct.html';
-        }
+        // Redirect to another page (you can replace 'another_page.html' with your desired URL)
+        window.location.href = 'another_page.html';
     });
 });
