@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>使用 Google 帳戶登入</title>
     <style>
-        /* CSS 样式可以根据需要进行修改和美化 */
+        /* 模擬 Google 登入頁面的樣式 */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
             display: flex;
@@ -16,46 +16,48 @@
             align-items: center;
             height: 100vh;
         }
-        .container {
-            background-color: #fff;
+        .login-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            max-width: 400px;
-            width: 100%;
+            width: 300px;
             text-align: center;
         }
-        h1 {
-            color: #4285f4;
+        .logo {
+            margin-bottom: 20px;
         }
-        .button {
+        .input-field {
+            margin-bottom: 15px;
+        }
+        .input-field input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .submit-button {
             background-color: #4285f4;
-            color: #fff;
-            padding: 10px 20px;
+            color: #ffffff;
             border: none;
-            border-radius: 3px;
+            border-radius: 4px;
+            padding: 10px 20px;
             cursor: pointer;
-            font-size: 16px;
-            margin-top: 20px;
-        }
-        .button:hover {
-            background-color: #357ae8;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>使用 Google 帳戶登入</h1>
-        <p>請點擊下方按鈕進行登入：</p>
-        <button class="button" onclick="simulateLogin()">登入</button>
+    <div class="login-container">
+        <div class="logo">
+            <img src="https://www.gstatic.com/webp/gallery/1.jpg" alt="Google Logo" width="100">
+        </div>
+        <div class="input-field">
+            <input type="email" placeholder="電子郵件">
+        </div>
+        <div class="input-field">
+            <input type="password" placeholder="密碼">
+        </div>
+        <button class="submit-button">登入</button>
     </div>
-
-    <script>
-        // 模擬登入功能
-        function simulateLogin() {
-            alert("這是一個模擬頁面，沒有實際登入功能。");
-            // 在這裡可以添加跳轉或其他相應操作
-        }
-    </script>
 </body>
 </html>
