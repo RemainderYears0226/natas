@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var messageBox = document.querySelector('.message-box');
         if (messageBox) {
             messageBox.innerHTML = '';
-            messageBox.innerHTML += '<p>Flag: FHSH{encrypt_decode}</p>';
+            messageBox.innerHTML += '<p>Flag: FHSH{c00kie=1}</p>';
         }
     }
 
