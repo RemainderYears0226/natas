@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var loginValue = getCookieValue("loginin");
+    var loginValue = getCookieValue("logging");
 
     if (loginValue === "1") {
         showFlag();
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function setLoginCookie(value) {
-        document.cookie = "loginin=" + value;
+        document.cookie = "logging=" + value;
     }
 
     setLoginCookie("0");
