@@ -1,5 +1,4 @@
 const articleList = document.getElementById('article-list');
-const flag = document.getElementById('flag');
 const homeButton = document.getElementById('homeButton');
 const searchPageButton = document.getElementById('searchPageButton');
 
@@ -26,8 +25,6 @@ function renderArticleList() {
   // 檢查是否需要顯示 flag
   if (articles.length === 0 && adminCookie === 'True') {
     showFlag();
-  } else {
-    hideFlag();
   }
 }
 
@@ -63,11 +60,12 @@ function handleDeleteClick(id) {
 }
 
 function showFlag() {
-  flag.classList.remove('hidden');
-}
-
-function hideFlag() {
-  flag.classList.add('hidden');
+  const flagLi = document.createElement('li');
+  flagLi.textContent = '歡迎登入 : admin';
+  flagLi.style.backgroundColor = '#4CAF50';
+  flagLi.style.color = 'white';
+  flagLi.style.padding = '10px';
+  articleList.appendChild(flagLi);
 }
 
 renderArticleList();
@@ -85,7 +83,4 @@ searchPageButton.addEventListener('click', () => {
 if (adminCookie === 'True') {
   // 更改標題
   document.querySelector('h1').textContent = '我的貼文';
-} else {
-  // 隱藏 flag
-  flag.classList.add('hidden');
 }
