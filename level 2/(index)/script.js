@@ -34,33 +34,31 @@ searchButton.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', function() {
     var loginValue = getCookieValue("admin");
-
     if (loginValue === "True") {
-        showFlag();
+      showFlag();
     }
-
+  
     function showFlag() {
-        var messageBox = document.querySelector('.message-box');
-        if (messageBox) {
-            messageBox.innerHTML = '';
-            messageBox.innerHTML += '<p>Flag: FHSH{c00kie=1}</p>';
-        }
+      var messageBox = document.createElement('div');
+      messageBox.classList.add('message-box');
+      messageBox.innerHTML = '<p>Flag: FHSH{c00kie=1}</p>';
+      document.body.appendChild(messageBox);
     }
-
+  
     function getCookieValue(cookieName) {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i].trim();
-            if (cookie.indexOf(cookieName) === 0) {
-                return cookie.substring(cookieName.length + 1);
-            }
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.indexOf(cookieName) === 0) {
+          return cookie.substring(cookieName.length + 1);
         }
-        return "";
+      }
+      return "";
     }
-
+  
     function setLoginCookie(value) {
-        document.cookie = "admin=" + value;
+      document.cookie = "admin=" + value;
     }
-
+  
     setLoginCookie("False");
-});
+  });
