@@ -41,22 +41,20 @@ searchButton.addEventListener('click', () => {
     const isSqlInjection = checkForSqlInjection(searchTerm);
 
     if (isSqlInjection) {
-      // 如果是 SQL 注入，不進行屏蔽
+      // 如果是 SQL 注入，顯示包含關鍵字的所有資料
       const matchedResults = tempDatabase.filter(result =>
         result.toLowerCase().includes(searchTerm)
       );
       displayResults(matchedResults);
     } else {
-      // 如果不是 SQL 注入，進行屏蔽
-      if (!searchTerm.includes('jimmy')) {
-        // 沒有包含 jimmy，顯示搜尋結果
-        const matchedResults = tempDatabase.filter(result =>
-          result.toLowerCase().includes(searchTerm)
-        );
-        displayResults(matchedResults);
+      // 如果不是 SQL 注入，進行一般搜尋
+      const filteredResults = tempDatabase.filter(result =>
+        result.toLowerCase().includes(searchTerm) && !result.toLowerCase().includes('jimmy')
+      );
+      if (filteredResults.length > 0) {
+        displayResults(filteredResults);
       } else {
-        // 包含 jimmy，顯示屏蔽提示
-        searchResults.innerHTML = '<p>該關鍵字已被屏蔽</p>';
+        searchResults.innerHTML = '<p>沒有符合的搜尋結果</p>';
       }
     }
   } else {
@@ -65,15 +63,11 @@ searchButton.addEventListener('click', () => {
 });
 
 function displayResults(results) {
-  if (results.length > 0) {
-    results.forEach(result => {
-      const resultElement = document.createElement('p');
-      resultElement.textContent = result;
-      searchResults.appendChild(resultElement);
-    });
-  } else {
-    searchResults.innerHTML = '<p>沒有符合的搜尋結果</p>';
-  }
+  results.forEach(result => {
+    const resultElement = document.createElement('p');
+    resultElement.textContent = result;
+    searchResults.appendChild(resultElement);
+  });
 }
 
 function checkForSqlInjection(searchTerm) {
@@ -82,7 +76,6 @@ function checkForSqlInjection(searchTerm) {
   // 這裡假設包含 ' or '1'='1' 為 SQL 注入
   return searchTerm.includes("or '1'='1'");
 }
-
 
 </script>
 </body>
