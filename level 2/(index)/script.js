@@ -56,12 +56,19 @@ function handleDeleteClick(id) {
   if (articleIndex !== -1) {
     articles.splice(articleIndex, 1);
     renderArticleList();
+
+    // 如果刪除最後一篇文章且為管理員,則顯示 flag
+    if (articles.length === 0 && adminCookie === 'True') {
+      showFlag();
+    }
   }
 }
 
 function showFlag() {
   const flagLi = document.createElement('li');
-  flagLi.textContent = '歡迎登入 : admin';
+  const h3 = document.createElement('h3');
+  h3.textContent = '歡迎登入 : admin';
+  flagLi.appendChild(h3);
   flagLi.style.backgroundColor = '#4CAF50';
   flagLi.style.color = 'white';
   flagLi.style.padding = '10px';
