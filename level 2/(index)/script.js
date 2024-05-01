@@ -7,6 +7,10 @@ const articles = [
 { id: 1, title: '示例文章', content: '這是一篇示例文章。' }
 ];
 
+// 隱藏所有刪除按鈕
+const deleteBtns = document.querySelectorAll('.delete-btn');
+deleteBtns.forEach(btn => btn.style.display = 'none');
+
 for (const article of articles) {
 renderArticle(article);
 }
@@ -68,9 +72,11 @@ if (adminCookie === 'True') {
   flag.classList.remove('hidden');
 
   // 顯示刪除按鈕
-  const deleteBtns = document.querySelectorAll('.delete-btn');
   deleteBtns.forEach(btn => btn.style.display = 'block');
 
   // 更改標題
   document.querySelector('h1').textContent = '我的貼文';
+} else {
+  // 隱藏刪除按鈕
+  deleteBtns.forEach(btn => btn.style.display = 'none');
 }
