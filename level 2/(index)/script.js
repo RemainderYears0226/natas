@@ -75,4 +75,7 @@ flag.classList.remove('hidden');
 
 // 更改標題
 document.querySelector('h1').textContent = '我的貼文';
+} else {
+// 隱藏 flag
+flag.classList.add('hidden');
 }
