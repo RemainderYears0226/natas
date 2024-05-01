@@ -66,8 +66,9 @@ function handleDeleteClick(id) {
 
 function showFlag() {
   const flagLi = document.createElement('li');
+  flagLi.id = 'flag'; // 設置 id 為 flag
   const h3 = document.createElement('h3');
-  h3.textContent = 'flag{fhsh}';
+  h3.textContent = 'flag{fhsh}'; // 更改文本內容
   flagLi.appendChild(h3);
   flagLi.style.backgroundColor = '#4CAF50';
   flagLi.style.color = 'white';
