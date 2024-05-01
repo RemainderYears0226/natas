@@ -19,10 +19,12 @@
 <button id="searchPageButton" class="bottom-button" onclick="window.location.href='search.html'">搜尋頁面</button>
 </footer>
 <script>
+// 第一段: 搜尋功能
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const searchResults = document.getElementById('searchResults');
 
+// 假設的臨時資料庫
 const tempDatabase = [
   '這是第一筆資料',
   '這是包含關鍵字的第二筆資料',
@@ -34,22 +36,53 @@ searchButton.addEventListener('click', () => {
   const searchTerm = searchInput.value.trim().toLowerCase();
   if (searchTerm) {
     searchResults.innerHTML = '';
-    const matchedResults = tempDatabase.filter(result =>
-      result.toLowerCase().includes(searchTerm)
-    );
-    if (matchedResults.length > 0) {
-      matchedResults.forEach(result => {
-        const resultElement = document.createElement('p');
-        resultElement.textContent = result;
-        searchResults.appendChild(resultElement);
-      });
+
+    // 檢查是否包含 SQL 注入
+    const isSqlInjection = checkForSqlInjection(searchTerm);
+
+    if (isSqlInjection) {
+      // 如果是 SQL 注入，不進行屏蔽
+      const matchedResults = tempDatabase.filter(result =>
+        result.toLowerCase().includes(searchTerm)
+      );
+      displayResults(matchedResults);
     } else {
-      searchResults.innerHTML = '<p>沒有符合的搜尋結果</p>';
+      // 如果不是 SQL 注入，進行屏蔽
+      if (!searchTerm.includes('jimmy')) {
+        // 沒有包含 jimmy，顯示搜尋結果
+        const matchedResults = tempDatabase.filter(result =>
+          result.toLowerCase().includes(searchTerm)
+        );
+        displayResults(matchedResults);
+      } else {
+        // 包含 jimmy，顯示屏蔽提示
+        searchResults.innerHTML = '<p>該關鍵字已被屏蔽</p>';
+      }
     }
   } else {
     searchResults.innerHTML = '<p>請輸入關鍵字</p>';
   }
 });
+
+function displayResults(results) {
+  if (results.length > 0) {
+    results.forEach(result => {
+      const resultElement = document.createElement('p');
+      resultElement.textContent = result;
+      searchResults.appendChild(resultElement);
+    });
+  } else {
+    searchResults.innerHTML = '<p>沒有符合的搜尋結果</p>';
+  }
+}
+
+function checkForSqlInjection(searchTerm) {
+  // 在這裡檢查是否包含 SQL 注入的邏輯，這裡只是一個示例
+  // 你可以根據你的需求來檢查是否包含 SQL 注入的字符
+  // 這裡假設包含 ' or '1'='1' 為 SQL 注入
+  return searchTerm.includes("or '1'='1'");
+}
+
 
 </script>
 </body>
