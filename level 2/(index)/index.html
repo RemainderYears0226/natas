@@ -3,24 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>我的貼文</title>
+<title>管理員的貼文</title> <!-- 修改標題 -->
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header>
-<h1>我的貼文</h1>
+  <h1>管理員的貼文</h1> <!-- 修改標題 -->
 </header>
 <main>
-<section>
-<h2 id="postHeading">文章列表</h2>
-<ul id="article-list">
-</ul>
-</section>
-<div id="flag" class="hidden">Flag: FHSH{c00kie=1} </div>
+  <section>
+    <h2>文章列表</h2>
+    <ul id="article-list">
+    </ul>
+  </section>
+  <div id="welcomeMessage" class="hidden">歡迎登入 : admin</div> <!-- 新增的歡迎訊息 -->
+  <div id="flag" class="hidden">Flag: FHSH{c00kie=1} </div>
 </main>
 <footer>
-<button id="homeButton" class="bottom-button" onclick="window.location.href='index.html'">主頁</button>
-<button id="searchPageButton" class="bottom-button" onclick="window.location.href='search.html'">搜尋頁面</button>
+  <button id="homeButton" class="bottom-button" onclick="window.location.href='index.html'">主頁</button>
+  <button id="searchPageButton" class="bottom-button" onclick="window.location.href='search.html'">搜尋頁面</button>
 </footer>
 <script src="script.js"></script>
 </body>
