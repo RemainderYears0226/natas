@@ -15,6 +15,9 @@ function renderArticle(article) {
 const li = document.createElement('li');
 const h3 = document.createElement('h3');
 const p = document.createElement('p');
+deleteBtn.textContent = '刪除';
+deleteBtn.className = 'delete-btn';
+deleteBtn.onclick = () => deleteArticle(article.id);
 
 h3.textContent = article.title;
 p.textContent = article.content;
