@@ -4,7 +4,7 @@ const homeButton = document.getElementById('homeButton');
 const searchPageButton = document.getElementById('searchPageButton');
 
 const articles = [
-{ id: 1, title: '示例文章', content: '這是一篇示例文章。' }
+  { id: 1, title: '示例文章', content: '這是一篇示例文章。' }
 ];
 
 // 獲取 cookie 值
@@ -40,14 +40,14 @@ function renderArticle(article) {
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = '刪除';
     deleteBtn.className = 'delete-btn';
-    deleteBtn.onclick = () => deleteArticle(article.id);
+    deleteBtn.onclick = () => handleDeleteClick(article.id);
     li.appendChild(deleteBtn);
   }
 
   articleList.appendChild(li);
 }
 
-function deleteArticle(id) {
+function handleDeleteClick(id) {
   const articleIndex = articles.findIndex(article => article.id === id);
   if (articleIndex !== -1) {
     articles.splice(articleIndex, 1);
@@ -55,12 +55,16 @@ function deleteArticle(id) {
 
     // 檢查是否需要顯示 flag
     if (articles.length === 0 && adminCookie === 'True') {
-      flag.classList.remove('hidden');
-      setTimeout(() => {
-        flag.classList.add('hidden');
-      }, 3000);
+      showFlag();
     }
   }
+}
+
+function showFlag() {
+  flag.classList.remove('hidden');
+  setTimeout(() => {
+    flag.classList.add('hidden');
+  }, 3000);
 }
 
 renderArticleList();
