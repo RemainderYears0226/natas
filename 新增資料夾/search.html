@@ -26,7 +26,7 @@ const searchResults = document.getElementById('searchResults');
 
 // 假設的臨時資料庫
 const tempDatabase = [
-  '這是第一筆資料jimmy',
+  '這是第一筆資料',
   '這是包含關鍵字的第二筆資料',
   '第三筆資料也包含了關鍵字',
   '這是最後一筆資料'
@@ -41,9 +41,10 @@ searchButton.addEventListener('click', () => {
     const isSqlInjection = checkForSqlInjection(searchTerm);
 
     if (isSqlInjection) {
-      // 如果是 SQL 注入，直接顯示包含關鍵字的所有資料
+      // 如果是 SQL 注入，直接進行搜尋並顯示結果
+      const sqlInjectionKeyword = searchTerm.split(' ')[1]; // 獲取 SQL 注入的關鍵字
       const matchedResults = tempDatabase.filter(result =>
-        result.toLowerCase().includes('jimmy')
+        result.toLowerCase().includes(sqlInjectionKeyword)
       );
       displayResults(matchedResults);
     } else {
