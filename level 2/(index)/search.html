@@ -8,15 +8,15 @@
 </head>
 <body>
 <main>
-<div class="search-container">
-<input type="text" id="searchInput" placeholder="輸入關鍵字...">
-<button id="searchButton">搜尋</button>
-<div id="searchResults"></div>
-</div>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="輸入關鍵字...">
+    <button id="searchButton">搜尋</button>
+    <div id="searchResults"></div>
+  </div>
 </main>
 <footer>
-<button id="homeButton" class="bottom-button" onclick="window.location.href='index.html'">主頁</button>
-<button id="searchPageButton" class="bottom-button" onclick="window.location.href='search.html'">搜尋頁面</button>
+  <button id="homeButton" class="bottom-button" onclick="window.location.href='index.html'">主頁</button>
+  <button id="searchPageButton" class="bottom-button" onclick="window.location.href='search.html'">搜尋頁面</button>
 </footer>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -42,12 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       return "";
     }
-
-    function setLoginCookie(value) {
-      document.cookie = "admin=" + value;
-    }
-
-    setLoginCookie("False");
   });
 </script>
 </body>
