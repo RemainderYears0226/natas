@@ -24,7 +24,7 @@ const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const searchResults = document.getElementById('searchResults');
 
-// 假設的临时数据库
+// 假設的臨時資料庫
 const tempDatabase = [
   '這是第一筆資料jimmy',
   '這是包含關鍵字的第二筆資料',
@@ -41,17 +41,16 @@ searchButton.addEventListener('click', () => {
     const isSqlInjection = checkForSqlInjection(searchTerm);
 
     if (isSqlInjection) {
-      // 如果是 SQL 注入，直接使用 SQL 注入后面的关键字进行实际搜索
-      const injectedTerm = searchTerm.split(' ')[1]; // 获取 SQL 注入后面的关键字
+      // 如果是 SQL 注入，取出注入後面的關鍵字進行實際搜尋
+      const injectedTerm = searchTerm.split(' ').pop();
       const matchedResults = tempDatabase.filter(result =>
         result.toLowerCase().includes(injectedTerm)
       );
       displayResults(matchedResults);
     } else {
-      // 如果不是 SQL 注入，进行一般搜索
-      const searchKeyword = searchTerm.split(' ')[1]; // 获取搜索关键字
+      // 如果不是 SQL 注入，進行一般搜尋
       const filteredResults = tempDatabase.filter(result =>
-        result.toLowerCase().includes(searchKeyword) && !result.toLowerCase().includes('jimmy')
+        result.toLowerCase().includes(searchTerm) && !result.toLowerCase().includes('jimmy')
       );
       if (filteredResults.length > 0) {
         displayResults(filteredResults);
@@ -73,9 +72,9 @@ function displayResults(results) {
 }
 
 function checkForSqlInjection(searchTerm) {
-  // 在这里检查是否包含 SQL 注入的逻辑，这里只是一个示例
-  // 你可以根据你的需求来检查是否包含 SQL 注入的字符
-  // 这里假设包含 ' or '1'='1' 为 SQL 注入
+  // 在這裡檢查是否包含 SQL 注入的邏輯，這裡只是一個示例
+  // 你可以根據你的需求來檢查是否包含 SQL 注入的字符
+  // 這裡假設包含 ' or '1'='1' 為 SQL 注入
   return searchTerm.includes("or '1'='1'");
 }
 
