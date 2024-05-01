@@ -19,12 +19,10 @@
 <button id="searchPageButton" class="bottom-button" onclick="window.location.href='search.html'">搜尋頁面</button>
 </footer>
 <script>
-// 第一段: 搜尋功能
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const searchResults = document.getElementById('searchResults');
 
-// 假設的臨時資料庫
 const tempDatabase = [
   '這是第一筆資料jimmy',
   '這是包含關鍵字的第二筆資料',
@@ -37,18 +35,15 @@ searchButton.addEventListener('click', () => {
   if (searchTerm) {
     searchResults.innerHTML = '';
 
-    // 檢查是否包含 SQL 注入
     const isSqlInjection = checkForSqlInjection(searchTerm);
 
     if (isSqlInjection) {
-      // 如果是 SQL 注入，取出注入後面的關鍵字進行實際搜尋
       const injectedTerm = searchTerm.split(' ').pop();
       const matchedResults = tempDatabase.filter(result =>
         result.toLowerCase().includes(injectedTerm)
       );
       displayResults(matchedResults);
     } else {
-      // 如果不是 SQL 注入，進行一般搜尋
       const filteredResults = tempDatabase.filter(result =>
         result.toLowerCase().includes(searchTerm) && !result.toLowerCase().includes('jimmy')
       );
@@ -72,9 +67,6 @@ function displayResults(results) {
 }
 
 function checkForSqlInjection(searchTerm) {
-  // 在這裡檢查是否包含 SQL 注入的邏輯，這裡只是一個示例
-  // 你可以根據你的需求來檢查是否包含 SQL 注入的字符
-  // 這裡假設包含 ' or '1'='1' 為 SQL 注入
   return searchTerm.includes("or '1'='1'");
 }
 
