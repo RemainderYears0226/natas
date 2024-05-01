@@ -22,14 +22,6 @@ function renderArticleList() {
   for (const article of articles) {
     renderArticle(article);
   }
-
-  // 檢查是否需要顯示 flag
-  if (articles.length === 0 && adminCookie === 'True') {
-    flag.classList.remove('hidden');
-    setTimeout(() => {
-      flag.classList.add('hidden');
-    }, 3000);
-  }
 }
 
 function renderArticle(article) {
@@ -60,6 +52,14 @@ function deleteArticle(id) {
   if (articleIndex !== -1) {
     articles.splice(articleIndex, 1);
     renderArticleList();
+
+    // 檢查是否需要顯示 flag
+    if (articles.length === 0 && adminCookie === 'True') {
+      flag.classList.remove('hidden');
+      setTimeout(() => {
+        flag.classList.add('hidden');
+      }, 3000);
+    }
   }
 }
 
