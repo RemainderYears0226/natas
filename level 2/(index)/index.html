@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>FHSH2</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搜尋頁面</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body oncontextmenu="return false;">
-    <div class="header">
-        <h1>FHSH2</h1>
-    </div>
-    <img src="img.jpg" alt="Level 2 Image">
-    <div class="message-box">
-        <p>你還沒有登入...</p>
-    </div>
+<body>
+  <div class="search-container">
+    <h1>搜尋</h1>
+    <input type="text" id="searchInput" placeholder="輸入關鍵字...">
+    <button id="searchButton">搜尋</button>
+    <div id="searchResults"></div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
