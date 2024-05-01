@@ -41,9 +41,9 @@ searchButton.addEventListener('click', () => {
     const isSqlInjection = checkForSqlInjection(searchTerm);
 
     if (isSqlInjection) {
-      // 如果是 SQL 注入，顯示包含關鍵字的所有資料
+      // 如果是 SQL 注入，直接顯示包含關鍵字的所有資料
       const matchedResults = tempDatabase.filter(result =>
-        result.toLowerCase().includes(searchTerm)
+        result.toLowerCase().includes('jimmy')
       );
       displayResults(matchedResults);
     } else {
