@@ -22,6 +22,13 @@ function renderArticleList() {
   for (const article of articles) {
     renderArticle(article);
   }
+
+  // 檢查是否需要顯示 flag
+  if (articles.length === 0 && adminCookie === 'True') {
+    showFlag();
+  } else {
+    hideFlag();
+  }
 }
 
 function renderArticle(article) {
@@ -52,19 +59,15 @@ function handleDeleteClick(id) {
   if (articleIndex !== -1) {
     articles.splice(articleIndex, 1);
     renderArticleList();
-
-    // 檢查是否需要顯示 flag
-    if (articles.length === 0 && adminCookie === 'True') {
-      showFlag();
-    }
   }
 }
 
 function showFlag() {
   flag.classList.remove('hidden');
-  setTimeout(() => {
-    flag.classList.add('hidden');
-  }, 3000);
+}
+
+function hideFlag() {
+  flag.classList.add('hidden');
 }
 
 renderArticleList();
