@@ -1,7 +1,41 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var loginValue = getCookieValue("logging");
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+const searchResults = document.getElementById('searchResults');
 
-    if (loginValue === "1") {
+
+const tempDatabase = [
+  'apple',
+  'banana',
+  'cat',
+  'delete',
+  'sad'
+];
+
+searchButton.addEventListener('click', () => {
+  const searchTerm = searchInput.value.trim().toLowerCase();
+  if (searchTerm) {
+    searchResults.innerHTML = '';
+    const matchedResults = tempDatabase.filter(result =>
+      result.toLowerCase().includes(searchTerm)
+    );
+    if (matchedResults.length > 0) {
+      matchedResults.forEach(result => {
+        const resultElement = document.createElement('p');
+        resultElement.textContent = result;
+        searchResults.appendChild(resultElement);
+      });
+    } else {
+      searchResults.innerHTML = '<p>沒有符合的搜尋結果</p>';
+    }
+  } else {
+    searchResults.innerHTML = '<p>請輸入關鍵字</p>';
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var loginValue = getCookieValue("admin");
+
+    if (loginValue === "True") {
         showFlag();
     }
 
@@ -25,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function setLoginCookie(value) {
-        document.cookie = "logging=" + value;
+        document.cookie = "admin=" + value;
     }
 
-    setLoginCookie("0");
+    setLoginCookie("False");
 });
