@@ -19,9 +19,6 @@ const deleteBtn = document.createElement('button');
 
 h3.textContent = article.title;
 p.textContent = article.content;
-deleteBtn.textContent = '刪除';
-deleteBtn.className = 'delete-btn';
-deleteBtn.onclick = () => deleteArticle(article.id);
 
 li.appendChild(h3);
 li.appendChild(p);
