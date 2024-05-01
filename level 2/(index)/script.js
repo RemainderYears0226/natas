@@ -68,7 +68,6 @@ function showFlag() {
   const flagLi = document.createElement('li');
   const h3 = document.createElement('h3');
   h3.textContent = 'flag{fhsh}';
-  flagLi.appendChild(h3);
   flagLi.style.backgroundColor = '#4CAF50';
   flagLi.style.color = 'white';
   flagLi.style.padding = '10px';
