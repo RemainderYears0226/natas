@@ -30,7 +30,7 @@
 
     async function fetchSearchResults(query) {
       try {
-        const response = await fetch(`mongodb+srv://jimmyjimmy0226:XCvJqawUzPr2aaCd@ctf.bkczoed.mongodb.net/api/search?query=${query}`);
+        const response = await fetch(`ctf-git-main-ejs-projects-80111a91.vercel.app/api/search?query=${query}`);
         const articles = await response.json();
         renderSearchResults(articles);
       } catch (err) {
