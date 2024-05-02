@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> FHSH CTF 01</title>
+    <style>
+        body {
+            background-color: #f0f2f5; /* 設定背景顏色 */
+            font-family: Arial, sans-serif; /* 設定字體 */
+            margin: 0; /* 清除頁面預設的 margin */
+            padding: 0; /* 清除頁面預設的 padding */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+            width: 40%; 
+            max-width: 600px; 
+            height: auto; 
+            margin: 10px; 
+        }
+        h1 {
+            color: #333;
+        }
+        h3 {
+            margin-top: 20px;
+            color: #666;
+        }
+        p {
+            margin-bottom: 10px;
+            color: #777;
+            text-align: left;
+            line-height: 1.5;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 150px; /* 設定按鈕的最大寬度 */
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <style>
+            h1 {
+                margin-top: 50px; 
+        </style>
+
+       <h1>歡迎來到 FHSH CTF 01</h1> 
+        
+        <ul style="text-align: left;">
+            <h3>題目</h3>
+            <p>最近剛考完段考,但老師尚未公佈成績。你想提前知道自己各科分數,從而</p>
+            <p>計算一下在班上的排名。你突然想到你的資科老師是成績查詢系統的撰寫</p>
+            <p>者，因此他可以查看所有學生的考試分數。在偶然間你突然回想起老師之</p>
+            <p>前上課時透露過，因為他太過懶惰而且是個粗心的人,因此每個帳號都會</p>
+            <p>使用同一帳號名...</p>
+        </ul>
+        <hr style="width: 90%;">
+        <ul style="text-align: left;">
+            <h3>Flag形式</h3>
+            <p>FHSH_CTF{XXXXX}</p>
+        </ul>
+
+        
+        <button onclick="redirectToDetailsPage()">開始 CTF</button>
+    </div>
+
+    <script>
+        function redirectToDetailsPage() {
+            window.location.href = 'http://127.0.0.1:5500/page2/index.html';
+        }
+    </script>
+</body>
+</html>
